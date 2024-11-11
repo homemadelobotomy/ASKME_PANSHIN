@@ -1,0 +1,23 @@
+{% extends "layouts/base.html" %}
+
+
+{% block profile %}
+  {% include "layouts/authorized.html" %}
+{% endblock profile %}
+
+{% block content %}
+<div class="row" style="border-bottom: 1px solid black;">
+  {% include 'layouts/question.html'%}
+</div>
+
+{% for answer in list %}
+  {% include "layouts/answer.html" %}
+{% endfor %}
+<div class="row d-flex align-items-center pt-5 mb-4" style="border-top: 1px solid black;">
+        
+          <textarea class="form-control" id="questionText" rows="5" style="resize: none;" placeholder="Enter your answer here.."></textarea>
+        
+</div>
+
+{% include "layouts/pagination.html" %}
+ {% endblock content %}

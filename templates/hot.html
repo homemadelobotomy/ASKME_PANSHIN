@@ -1,0 +1,22 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block profile %}
+  {% include "layouts/not_authorized.html" %}
+{% endblock profile %}
+
+{% block content %}
+    <div class="d-flex gap-3 align-items-center mb-4 ">
+        <div class = "d-flex align-items-center gap-3">        
+        <h2> Hot questions</h2>
+        <a href ="{% url "index" %}"> New Questions</a>
+        </div>
+    </div>
+
+    {% for question in list %}
+        {% include "layouts/question.html" %}
+    {% endfor %}
+
+    {% include "layouts/pagination.html" %}
+          
+{% endblock content %}

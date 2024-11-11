@@ -1,0 +1,22 @@
+
+{% extends "layouts/base.html" %}
+{% load static %}
+
+
+{% block profile %}
+  {% include "layouts/authorized.html" %}
+{% endblock profile %}
+
+{% block content %}
+    
+<div class="d-flex gap-3 align-items-center mb-4 ">
+    <h2>Tag: {{tag}}<h2>
+</div>
+
+{% for question in list %}
+  {% include "layouts/question.html" %}
+{% endfor %}
+
+{% include "layouts/pagination.html" %}
+                
+{% endblock content %}

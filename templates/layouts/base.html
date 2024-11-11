@@ -1,0 +1,75 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>base</title>
+    <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
+    <style>
+        
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="d-flex align-items-center justify-content-between mb-5 p-3" style = "border-bottom: 1px solid black;">
+          <a href="{% url "index" %}" class="badge rounded-pill text-bg-success m-3" style="font-size: 30px; text-decoration: none;">
+            AskPupkin
+          </a>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <a class="btn btn-outline-success" type="submit" href = "{% url "ask" %}" >Ask</a>
+              </form>
+            
+            <div class="d-flex gap-2">
+               {% block profile %}
+               
+               {% endblock profile %}
+                
+            </div>
+        </div>          
+    </header>
+
+    <main class="container mt-3">
+        <div class="row">
+              <div class="col-9 px-5">
+                   {% block content %}
+
+                   {% endblock  %}
+              </div>
+              <div class="col-3">
+                
+                  <section class="mb-2">
+                      <h2>Popular Tags</h2>
+                      <div class= "d-flex flex-wrap gap-2">
+                      <a href = "{% url "tag" tag='Tag1' %}"type="button" class="btn btn-outline-primary">Tag1</a>
+                      <a href = "{% url "tag" tag='Tag3' %}"type="button" class="btn btn-outline-secondary">Tag3</a>
+                      <a href = "{% url "tag" tag='Tag4' %}"type="button" class="btn btn-outline-success">Tag4</a>
+                      <a href = "{% url "tag" tag='Tag2' %}"type="button" class="btn btn-outline-danger">Tag2</a>
+                      <a href = "{% url "tag" tag='Tag6' %}"type="button" class="btn btn-outline-warning">Tag6</a>
+                      <a href = "{% url "tag" tag='Tag7' %}"type="button" class="btn btn-outline-info">Tag7</a>
+                      <a href = "{% url "tag" tag='Tag8' %}"type="button" class="btn btn-outline-dark">Tag8</a>
+                      </div>
+                
+                  </section>
+                  <section>
+                      <h2>Best Members</h2>
+                      <ul class="list-group list-group-flush">
+                          <li class="list-group-item"><a href="#">Member 1</a></li>
+                          <li class="list-group-item"><a href="#">Member 2</a> </li>
+                          <li class="list-group-item"><a href="#">Member 3</a></li>
+                          <li class="list-group-item"><a href="#">Member 4</a> </li>
+                          <li class="list-group-item"><a href="#">Member 5</a></li>
+                        </ul>
+                  </section>
+                
+              </div>
+        </div>
+              
+    </main>
+    <script src= {% static "js/bootstrap.min.js" %}>
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+ {% extends "layouts/base.html" %}
+
+
+ {% block profile %}
+  {% include "layouts/authorized.html" %}
+{% endblock profile %}
+
+{% block content %}
+<div >
+    <h2>New Question</h2>
+</div>
+<div class="container mt-4">
+    
+    <form class="d-flex flex-column gap-3">
+      <div class="row mb-3 d-flex align-items-center">
+        
+        <label for="questionTitle" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="questionTitle" placeholder="Enter question title">
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+      
+        <label for="questionText" class="col-sm-2 col-form-label">Text</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" id="questionText" rows="5" placeholder="Write your question here"></textarea>
+        </div>
+      </div>
+  
+      <div class="row mb-3 d-flex align-items-center">
+        
+        <label for="tags" class="col-sm-2 col-form-label">Tags</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="tags" placeholder="Add tags here, using a comma ">
+        </div>
+      </div>
+  
+     
+      <div class="row">
+        <div class="col-sm-2"></div> 
+        <div class="col-sm-10">
+            <a class="btn btn-outline-success" type="submit" href="#" >Ask</a>
+        </div>
+      </div>
+    </form>
+  </div>
+    
+{% endblock content %} 
+
+

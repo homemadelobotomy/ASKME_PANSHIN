@@ -1,0 +1,62 @@
+{% extends "layouts/base.html" %}
+
+{% block profile %}
+  {% include "layouts/authorized.html" %}
+{% endblock profile %}
+
+{% block content %}
+<div >
+    <h2>Settings: Dr.Pepper</h2>
+</div>
+
+<div class="container mt-4">
+    
+    <form class="d-flex flex-column gap-3">
+
+      <div class="row mb-3 d-flex align-items-center">
+        
+        <label for="questionTitle" class="col-sm-2 col-form-label">Login</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="questionTitle" placeholder="Enter Login">
+        </div>
+      </div>
+  
+     <div class="row mb-3 d-flex align-items-center">
+        
+        <label for="questionTitle" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="questionTitle" placeholder="Enter Email">
+        </div>
+      </div>
+  
+      <div class="row mb-3 d-flex align-items-center">
+        
+        <label for="tags" class="col-sm-2 col-form-label">NickName</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="tags" placeholder="Write youre nickname here">
+        </div>
+      </div>
+
+      <div class="row mb-3 d-flex ">  
+        <label for="questionTitle" class="col-sm-2 col-form-label">Upload Avatar</label>
+        <div class="col-sm-6 d-flex flex-column" >
+            <div style="height: 150px; width: 150px;" class="m-2 border border-2 rounded-3">
+                <img src="" class="img-fluid" alt="Avatar">
+              </div>
+              <div class="input-group d-flex gap-3">
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Choose</button>
+              </div>
+        </div>
+      </div>
+  
+     
+      <div class="row">
+        <div class="col-sm-2"></div> 
+        <div class="col-sm-10">
+            <a class="btn btn-outline-success" type="submit" href="#" >Save</a>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock content %}
