@@ -3,29 +3,30 @@
 
 <div class="card mb-3">
     <div class="row">
-      <div class="col-3">
+      <div class="col-2">
         <div class = "d-flex flex-column" style = "height: 100%;"> 
-            <div style="height: 150px; width: 150px;" class="m-2">
+            <div style="height: auto; width: 120px;" class="m-1 mt-3">
               <img src="{% static 'img/i2.jpg' %}" class="img-thumbnail" alt="Avatar">
             </div>
-            
-                <input class="form-control mt-auto mb-3" type="number" value="5" placeholder="Likes" aria-label="default input example">
+            <div class = "m-2" style="text-align: center;">
+                <h5>{{question.author}}</h5>
+            </div>
+                <input class="form-control  my-3" type="number" value = {{question.likes}} placeholder="Likes" aria-label="default input example">
             
         </div>
       </div>
       <div class="col-9">
         <div class="card-body d-flex flex-column" style="padding-top: 0; height: 100%;">
           <a class="card-title" href="{% url "one_question" question.id %}" style="font-size: 30px;">{{ question.title }}</a>
-          <p class="card-text ">{{ question.text}} uytdrfgyuhuhhhhhdkflgafgsadyskdfhsdgfhsdgfhjsgdhjfgsdhjfgsdyuadhjgfhjhjsdagsdfjgkuyhjsaUIYTDFTGHDUSGFYUDGfsaysuadkvysadgvyuvgsyavgyvgyvagasyduvgsagkysgykusadvgsayudvgavgsavgasyvgufgsadyukfgaskydufgysdufgasdyufgsadkfsdaukfgasdkfgasdfgshadfyusdgfayuasdgfyusadkfgsadkfgsayufgsauykdfgsadyukfgsadkfgsadyfdggsafsafsafyasyudfgsadyufgasdkfgsafksadyufgsayudfgsadyufksadyufsadkfygsadfyugsafyusgadfyusagdfyujdgdgjdfklgjdklfgjkdlfgjdfkdfhgjkdfhgjkdfhgjkdhfdfgjkdfhgjkhfsuhfuygfudygvuyagvusdgsahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhafiwpefgaiwuaeifhehfiawevhuisavhsadgvhaiFGODHDUIYGURFUASDFYUSDAVHBYUASDGVYUDSAVGASDAGVSHDAVJKASDVHJSADGVHSADKGVAJSDGHJSADVGSAHJDKVGSDHJK</p>
+          <p class="card-text ">{{ question.text}} </p>
           
           
           <div class="d-flex gap-5 mt-auto">
-            <a href="{% url "one_question" question.id %}" class="card-link">Answer (3)</a>
+            <a href="{% url "one_question" question.id %}" class="card-link"> Answers (10) </a>
             <div>
-              Tags:
-                <a role="button" class="btn btn-sm btn-outline-danger" href = "{% url "tag" tag='Tag2' %}">Tag2</a>
-                <a role="button" class="btn btn-sm btn-outline-warning" href = "{% url "tag" tag='Tag6' %}">Tag6</a>
-                <a role="button" class="btn btn-sm btn-outline-info" href = "{% url "tag" tag='Tag7' %}">Tag7</a>
+              Tags:{% for tag in question.tags  %}
+                <a role="button" class="btn btn-sm btn-success" style = "background-color: #" href = "{% url "tag" tag=tag %}">{{tag}}</a>
+                {% endfor %}
             </div>
           </div>
         </div>

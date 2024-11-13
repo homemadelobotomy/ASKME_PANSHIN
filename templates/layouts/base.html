@@ -43,13 +43,10 @@
                   <section class="mb-2">
                       <h2>Popular Tags</h2>
                       <div class= "d-flex flex-wrap gap-2">
-                      <a href = "{% url "tag" tag='Tag1' %}"type="button" class="btn btn-outline-primary">Tag1</a>
-                      <a href = "{% url "tag" tag='Tag3' %}"type="button" class="btn btn-outline-secondary">Tag3</a>
-                      <a href = "{% url "tag" tag='Tag4' %}"type="button" class="btn btn-outline-success">Tag4</a>
-                      <a href = "{% url "tag" tag='Tag2' %}"type="button" class="btn btn-outline-danger">Tag2</a>
-                      <a href = "{% url "tag" tag='Tag6' %}"type="button" class="btn btn-outline-warning">Tag6</a>
-                      <a href = "{% url "tag" tag='Tag7' %}"type="button" class="btn btn-outline-info">Tag7</a>
-                      <a href = "{% url "tag" tag='Tag8' %}"type="button" class="btn btn-outline-dark">Tag8</a>
+                        {% for tag in popular_tags %}
+                          <a href = "{% url "tag" tag=tag.name %}"type="button" class="btn btn-outline-success">{{tag.name}}</a>
+                        {% endfor %}
+                      
                       </div>
                 
                   </section>
